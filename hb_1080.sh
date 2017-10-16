@@ -20,9 +20,6 @@ function convert_video {
 
   HandBrakeCLI -e x264 -q 18.0 -a 1,2,3 -E copy -s 1,2,3 -i "$IN" -o "$OUT"
 
-  #notify -t "Converted $(basename "$1")"
-  /home/hatz/scripts/ifttt-trigger.sh "Converted: $NEWN"
-
 }
 
 for i in "$@"; do
