@@ -29,11 +29,19 @@ if __name__ == '__main__':
 
     #Add Title
     NEWSOUP.html.append(NEWSOUP.new_tag("head"))
-    NEWSOUP.head.append(SOUP.title)
+    try:
+        NEWSOUP.head.append(SOUP.title)
+    except ValueError as identifier:
+        NEWSOUP.head.append(NEWSOUP.new_tag("title"))
+        NEWSOUP.head.title.append(IN_FILENAME)
 
     #Edit Article
     NEWSOUP.html.append(NEWSOUP.new_tag("body"))
     THE_ARTICLE = SOUP.article
+
+    if THE_ARTICLE is None:
+        print("No article tag found, abrting.")
+        exit(1)
 
     #Add new article
     NEWSOUP.body.append(THE_ARTICLE)
