@@ -46,4 +46,3 @@ if __name__ == '__main__':
 
     # print(NEWSOUP.prettify())
     print("Done.")
-    
