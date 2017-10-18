@@ -15,6 +15,7 @@ if __name__ == '__main__':
     print("Ripping file: "+IN_FILENAME)
 
     if not Path(IN_FILENAME).is_file():
+        print(IN_FILENAME+" is not a file.")
         exit(1)
 
     #Get contents
